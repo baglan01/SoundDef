@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "../Content/ContentSubComponents/Button";
+import Button from "../SubComponents/Button";
 import HeaderButtons from "./HeaderButtons";
 
 export default function Header (props){

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Content/ContentSubComponents/Button";
+import Button from "../SubComponents/Button";
 
 function HeaderButtons(props){
 

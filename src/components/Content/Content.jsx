@@ -1,6 +1,6 @@
 import React from "react";
 import DownloadPart from "./DownloadPart";
-import Divider from "./ContentSubComponents/Divider";
+import Divider from "../SubComponents/Divider";
 
 function Content(){
     return(

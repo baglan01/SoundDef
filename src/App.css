@@ -216,13 +216,16 @@ a{
     border-bottom-color: rgba(255,255,255,0.5);
     transform: scale(0.1, 1);
 }
+
 .login:hover p {
     letter-spacing: 2px;
 }
+
 .login:hover::before {
     opacity: 1;
     transform: scale(1, 1);
 }
+
 .login::after {
     content: '';
     position: absolute;
@@ -234,6 +237,7 @@ a{
     transition: all 0.3s;
     background-color: rgba(255,255,255,0.1);
 }
+
 .login:hover::after {
     opacity: 0;
     transform: scale(0.1, 1);
@@ -260,10 +264,12 @@ a{
 .login:hover p {
     letter-spacing: 2px;
 }
+
 .login:hover::before {
     opacity: 1;
     transform: scale(1, 1);
 }
+
 .login::after {
     content: '';
     position: absolute;
@@ -275,6 +281,7 @@ a{
     transition: all 0.3s;
     background-color: rgba(255,255,255,0.1);
 }
+
 .login:hover::after {
     opacity: 0;
     transform: scale(0.1, 1);
