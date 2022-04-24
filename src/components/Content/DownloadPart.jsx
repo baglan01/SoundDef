@@ -1,10 +1,11 @@
 import React from "react";
+import Button from "./ContentSubComponents/Button";
 
 function DownloadPart(){
     return(
         <div className={`DownloadPart`}>
 
-            <div className={`fileLoadingPartWrapper`}>
+            <div className='fileLoadingPartWrapper'>
 
                 <div className="fileLoadingPart">
 
@@ -45,9 +46,11 @@ function DownloadPart(){
 
                         </div>
 
-
                     </div>
 
+                    <div className="ButtonWrapper">
+                        <Button text='Submit'/>
+                    </div>
 
 
                 </div>
@@ -61,4 +64,4 @@ function DownloadPart(){
     )
 }
 
-export default DownloadPart();
+export default DownloadPart;

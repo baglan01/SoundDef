@@ -6,12 +6,13 @@ import {useState} from "react";
 
 function App() {
 
+    let authorized = false;
     const [] = useState();
 
   return (
     <div className="AppWrapper">
-        <Header/>
-
+        <Header isAuthorized = {authorized} />
+        <Content/>
     </div>
   );
 }

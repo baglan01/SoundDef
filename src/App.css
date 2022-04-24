@@ -158,6 +158,7 @@ a{
     justify-content: space-between;
     width: fit-content;
     height: 100%;
+    gap: 15px;
 }
 
 
@@ -168,6 +169,7 @@ a{
 
 .profileAndLogOut{
     display: flex;
+    gap: 15px;
 }
 
 
@@ -175,7 +177,6 @@ a{
 /* Login Btn Animate */
 
 .login {
-    margin-right: 15px;
     color: #FFF;
     transition: all 0.3s;
     position: relative;
@@ -186,6 +187,9 @@ a{
 
     white-space: nowrap;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: black;
 }
 
 .login p{
@@ -498,13 +502,11 @@ Login SignUp Form
 
 
 .Content{
-    display: none;
     height: 93.3vh;
     overflow-y: auto;
 }
 
 .subContent{
-    display: none;
 }
 
 .divider{
@@ -772,6 +774,8 @@ svg.intro.go .text-stroke {
     align-items: center;
 }
 
+
+
 .fileLoadingBucket{
     display: flex;
     height: 400px;
@@ -809,6 +813,7 @@ svg.intro.go .text-stroke {
     outline-offset: -10px;
     text-align: center !important;
     transition: background-color 0.5s ease;
+    margin-bottom: 20px;
 }
 .upload-container input {
     opacity: 0;

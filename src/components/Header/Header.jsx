@@ -1,7 +1,11 @@
 import React from 'react';
 import Button from "../Content/ContentSubComponents/Button";
+import HeaderButtons from "./HeaderButtons";
 
-export default function Header (){
+export default function Header (props){
+
+
+
     return(
         <div className={`Header`}>
             <div className="headerWrap">
@@ -56,32 +60,7 @@ export default function Header (){
 
 
                 <div className="rightPartHeader">
-                    <div className="loginAndSignUp">
-
-                       <Button text='login'/>
-                       <Button text='Sign Up'/>
-
-                        {/*<div className="login" id="openSignUpForm">*/}
-                        {/*    <p className="signUpText">Sign Up</p>*/}
-                        {/*</div>*/}
-                    </div>
-
-                    <div className="profileAndLogOut">
-
-                        {/*<div className="login" id="profile" data-bs-toggle="offcanvas"*/}
-                        {/*   data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">*/}
-                        {/*    <p className="loginText">Profile</p>*/}
-                        {/*</div>*/}
-
-                        <Button text='Profile'/>
-                        <Button text='Log Out'/>
-
-
-                        {/*<div className="login" id="LogOut">*/}
-                        {/*    <p className="signUpText">Log Out</p>*/}
-                        {/*</div>*/}
-                    </div>
-
+                    <HeaderButtons  isAuthorizedTwo= {props.isAuthorized}/>
                 </div>
 
             </div>
