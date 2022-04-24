@@ -1,12 +1,12 @@
 import React from "react";
 import DownloadPart from "./DownloadPart";
+import Divider from "./ContentSubComponents/Divider";
 
 function Content(){
     return(
         <div className={`Content`}>
 
-            <div className="divider"></div>
-
+            <Divider/>
             <DownloadPart/>
 
 

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Button from "../Content/ContentSubComponents/Button";
 
-export default  function Header (){
+export default function Header (){
     return(
         <div className={`Header`}>
             <div className="headerWrap">
                 <div className="leftPartHeader">
-
-                    <a className="mainIcon">
+                    <div className="mainIcon">
                         <svg width="112" height="46" viewBox="0 0 112 46" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path className="IconPart"
@@ -43,7 +43,7 @@ export default  function Header (){
                                   d="M45.375 11.75C45.375 10.5764 44.4236 9.625 43.25 9.625C42.0764 9.625 41.125 10.5764 41.125 11.75V35C41.125 36.1736 42.0764 37.125 43.25 37.125C44.4236 37.125 45.375 36.1736 45.375 35V11.75Z"
                                   fill="white"/>
                         </svg>
-                    </a>
+                    </div>
 
                     <div className="headerLinks">
                         <a className="headerLink">About</a>
@@ -57,24 +57,29 @@ export default  function Header (){
 
                 <div className="rightPartHeader">
                     <div className="loginAndSignUp">
-                        <a className="login" id="openLoginForm">
-                            <p className="loginText">login</p>
-                        </a>
 
-                        <a className="login" id="openSignUpForm">
-                            <p className="signUpText">Sign Up</p>
-                        </a>
+                       <Button text='login'/>
+                       <Button text='Sign Up'/>
+
+                        {/*<div className="login" id="openSignUpForm">*/}
+                        {/*    <p className="signUpText">Sign Up</p>*/}
+                        {/*</div>*/}
                     </div>
 
                     <div className="profileAndLogOut">
-                        <a className="login" id="profile" data-bs-toggle="offcanvas"
-                           data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                            <p className="loginText">Profile</p>
-                        </a>
 
-                        <a className="login" id="LogOut">
-                            <p className="signUpText">Log Out</p>
-                        </a>
+                        {/*<div className="login" id="profile" data-bs-toggle="offcanvas"*/}
+                        {/*   data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">*/}
+                        {/*    <p className="loginText">Profile</p>*/}
+                        {/*</div>*/}
+
+                        <Button text='Profile'/>
+                        <Button text='Log Out'/>
+
+
+                        {/*<div className="login" id="LogOut">*/}
+                        {/*    <p className="signUpText">Log Out</p>*/}
+                        {/*</div>*/}
                     </div>
 
                 </div>
