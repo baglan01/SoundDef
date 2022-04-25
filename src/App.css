@@ -452,6 +452,7 @@ Login SignUp Form
 .mainInfo{
     position: relative;
     overflow: hidden;
+    background: #eeeeee;
 
     background-size: cover;
     width: 100%;
