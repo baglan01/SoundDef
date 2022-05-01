@@ -3,7 +3,7 @@ import DownloadPart from "./DownloadPart";
 import Divider from "../SubComponents/Divider";
 import Main from "./Main";
 import About from "./About";
-import MainModal from '../SubComponents/MainModal'
+import Features from "./Features";
 
 function Content(){
     return(
@@ -12,7 +12,10 @@ function Content(){
             <Divider/>
             <About/>
             <Divider/>
+            <Features/>
+            <Divider/>
             <DownloadPart/>
+
         </div>
     )
 }

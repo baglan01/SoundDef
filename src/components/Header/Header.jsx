@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Button from "../SubComponents/Button";
 import HeaderButtons from "./HeaderButtons";
 import MainModal from "../SubComponents/MainModal";
-import Main from "../Content/Main";
 
 
 const Header = ({isAuthorized}) =>{
