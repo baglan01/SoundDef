@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from "../SubComponents/Button";
 import HeaderButtons from "./HeaderButtons";
+import MainModal from "../SubComponents/MainModal";
+import Main from "../Content/Main";
 
-export default function Header (props){
 
+const Header = ({isAuthorized}) =>{
 
+    const [loginModalActive , setLoginModalActive ] = useState(false)
 
     return(
         <div className={`Header`}>
@@ -60,11 +63,17 @@ export default function Header (props){
 
 
                 <div className="rightPartHeader">
-                    <HeaderButtons  isAuthorizedTwo= {props.isAuthorized}/>
+                    <HeaderButtons  isAuthorizedTwo= {isAuthorized} loginModalActive={loginModalActive} setLoginModalActive={setLoginModalActive} />
                 </div>
 
+
             </div>
+
+
+            <MainModal active={loginModalActive} setActive={setLoginModalActive}/>
 
         </div>
     )
 }
+
+export default Header;

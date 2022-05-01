@@ -1,6 +1,6 @@
 import React from "react";
-// import NN from '../../../public/NN.png'
-// import Dataset from '../../../public/dataset.svg'
+import NN from '../../images/NN.png'
+import Dataset from '../../images/dataset.svg'
 
 function About(){
     return(
@@ -16,7 +16,7 @@ function About(){
                     <div className="aboutItemOne aboutTable">
 
                         {/*<img src="images/NN.png">*/}
-                        {/*<img src={NN}/>*/}
+                        <img src={NN}/>
                             <div className="textForAbout">
                                 <div className="aboutSubTitleText">
                                     1 Problem definition
@@ -104,7 +104,7 @@ function About(){
                         </div>
 
                         {/*<img src="images/dataset.svg">*/}
-                        {/*<img src={Dataset}/>*/}
+                        <img src={Dataset}/>
 
                     </div>
 

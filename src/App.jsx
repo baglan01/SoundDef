@@ -6,8 +6,7 @@ import {useState} from "react";
 
 function App() {
 
-    let authorized = false;
-    const [] = useState();
+    const [authorized , setAuthorized] = useState(false);
 
   return (
     <div className="AppWrapper">

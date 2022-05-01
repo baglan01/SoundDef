@@ -3,6 +3,7 @@ import DownloadPart from "./DownloadPart";
 import Divider from "../SubComponents/Divider";
 import Main from "./Main";
 import About from "./About";
+import MainModal from '../SubComponents/MainModal'
 
 function Content(){
     return(

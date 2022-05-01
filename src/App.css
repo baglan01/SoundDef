@@ -296,21 +296,21 @@ a{
 Login SignUp Form
  */
 
-.overlay{
-    position:fixed;
-    height:100%;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.5);
-    display:none;
+/*.overlay{*/
+/*    position:fixed;*/
+/*    height:100%;*/
+/*    width:100%;*/
+/*    top:0;*/
+/*    background:rgba(0,0,0,0.5);*/
+/*    display:none;*/
 
 
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    z-index: 2;
+/*    align-items: center;*/
+/*    align-content: center;*/
+/*    justify-content: center;*/
+/*    z-index: 2;*/
 
-}
+/*}*/
 
 
 
@@ -971,7 +971,7 @@ svg.intro.go .text-stroke {
 
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
 
 /* Track */

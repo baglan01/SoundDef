@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../SubComponents/Button";
 
-function HeaderButtons(props){
+function HeaderButtons({isAuthorizedTwo , loginModalActive , setLoginModalActive}){
 
-    if(props.isAuthorizedTwo){
+    if(isAuthorizedTwo){
         return(
             <div className="profileAndLogOut">
                 <Button text='Profile'/>
@@ -14,7 +14,7 @@ function HeaderButtons(props){
         return(
 
             <div className="loginAndSignUp">
-                <Button text='login'/>
+                <Button text='login' />
                 <Button text='Sign Up'/>
             </div>
         )
