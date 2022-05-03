@@ -17,6 +17,7 @@
 }
 
 .MainModal.active{
+    pointer-events: all;
     opacity: 1;
     transition: 0.5s;
 }

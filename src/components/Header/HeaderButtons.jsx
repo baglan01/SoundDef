@@ -1,12 +1,14 @@
 import React from "react";
 import Button from "../SubComponents/Button";
 
-function HeaderButtons({isAuthorizedTwo , loginModalActive , setLoginModalActive}){
+function HeaderButtons({isAuthorizedTwo , loginModalActive , setLoginModalActive , ...rest}){
+
+
 
     if(isAuthorizedTwo){
         return(
             <div className="profileAndLogOut">
-                <Button text='Profile'/>
+                <Button onClick={ () => {} } text='Profile'/>
                 <Button text='Log Out'/>
             </div>
         )

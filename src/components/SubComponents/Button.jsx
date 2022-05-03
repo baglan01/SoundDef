@@ -1,13 +1,14 @@
 import React from "react";
 
-function Button(props){
-    const text = props.text;
+function Button({text, onClick, ...rest}){
+
+
     return(
-        <div className="login">
+        <button onClick={onClick} className="login">
 
             <p> {text} </p>
 
-        </div>
+        </button>
     )
 }
 
