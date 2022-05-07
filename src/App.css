@@ -945,6 +945,9 @@ svg.intro.go .text-stroke {
 
 .Alternatives{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: var(--mygrey-color);
 }
 
@@ -959,7 +962,7 @@ svg.intro.go .text-stroke {
 }
 
 .alternativesContent{
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1024,4 +1027,12 @@ svg.intro.go .text-stroke {
     display: none;
 }
 
+
+.soundDefLogo img{
+    height: 100px;
+}
+
+.cameraLogo img{
+    height: 100px;
+}
 

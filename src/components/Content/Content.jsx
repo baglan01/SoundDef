@@ -4,6 +4,7 @@ import Divider from "../SubComponents/Divider";
 import Main from "./Main";
 import About from "./About";
 import Features from "./Features";
+import Alternatives from "./Alternatives";
 
 function Content(isAuthorized , setAuthorized){
     return(
@@ -13,6 +14,8 @@ function Content(isAuthorized , setAuthorized){
             <About/>
             <Divider/>
             <Features/>
+            <Divider/>
+            <Alternatives/>
             <div>
 
             {/*{*/}
