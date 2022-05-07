@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import Button from "../SubComponents/Button";
 import HeaderButtons from "./HeaderButtons";
 import MainModal from "../SubComponents/MainModal";
+import LoginSignUpContent from "../SubComponents/LoginSignUpContent";
 
 
 
 const Header = ({isAuthorized}) =>{
 
     const [loginModalActive , setLoginModalActive ] = useState(false)
+    const [LoginPartActive , setLoginPartActive] = useState(true);
 
     return(
         <div className={`Header`}>
@@ -75,8 +77,8 @@ const Header = ({isAuthorized}) =>{
                             :
                             (
                             <div className="loginAndSignUp">
-                                <Button onClick={ () => {setLoginModalActive(true)} } text='login' />
-                                <Button onClick={ () => {setLoginModalActive((true))}}  text='Sign Up'/>
+                                <Button onClick={ () => {setLoginModalActive(true) ; setLoginPartActive(true) }} text='login' />
+                                <Button onClick={ () => {setLoginModalActive((true)) ; setLoginPartActive(false) }}  text='Sign Up'/>
                             </div>
                             )
 
@@ -90,11 +92,13 @@ const Header = ({isAuthorized}) =>{
 
 
             <MainModal active={loginModalActive} setActive={setLoginModalActive}>
+                {/*<LoginSignUpContent LoginPartActive={LoginPartActive} setLoginPartActive={setLoginPartActive} />*/}
+
                 <div className={'overlayContentWrapper'}>
                     <div className="overlayContentHeader">
-                        <div className="chooseBtn" id="toLoginPart">
+                        <button className="chooseBtn" id="toLoginPart" onClick={() => {setLoginPartActive(true) }}>
                             <p> Login </p>
-                        </div>
+                        </button>
 
                         <div className="overlayFormLogo">
 
@@ -137,16 +141,23 @@ const Header = ({isAuthorized}) =>{
 
                         </div>
 
-                        <div className="chooseBtn" id="toSignUpPart">
+                        <button className="chooseBtn" id="toSignUpPart" onClick={ () => {setLoginPartActive(false) }}>
                             <p> Sign Up</p>
-                        </div>
+                        </button>
 
 
 
                     </div>
 
+                    <div className="overlayContentSubHeader">
+                        <div className={LoginPartActive ? 'overlayContentSubHeaderBlock' : 'overlayContentSubHeaderBlock overlayContentSubHeaderBlockMove'}>
+
+                        </div>
+                    </div>
+
+
                     <div className="overlayMainContentWrap">
-                        <div className="overlayMainContent" id="overlayMainContent">
+                        <div className={LoginPartActive ? 'overlayMainContent' : 'overlayMainContent loginPartMove'} id="overlayMainContent">
                             <div className="overlayContent" id="loginContent">
                                 <div className="loginContentInnerWrapper">
 
@@ -171,11 +182,8 @@ const Header = ({isAuthorized}) =>{
                                         </div>
                                     </div>
 
-                                    <div className="loginFormLogin">
-
-                                        <div className="login" id="loginFormSubmit">
-                                            Login
-                                        </div>
+                                    <div className={'ModalFormBtnWrapper'}>
+                                        <Button text='Login'/>
                                     </div>
 
                                 </div>
@@ -183,54 +191,56 @@ const Header = ({isAuthorized}) =>{
 
                             <div className="overlayContent" id="signUpContent">
 
-                                <div className="enterInfoBlocks">
-                                    <div className="enterInfoBlocksTopic">
-                                        Email
+                                <div className="loginContentInnerWrapper">
+
+                                    <div className="enterInfoBlocks">
+                                        <div className="enterInfoBlocksTopic">
+                                            Email
+                                        </div>
+
+                                        <div className="enterInfoBlocksInputWrapper">
+                                            <input type="text" placeholder="Enter your email" id="signUpFormEmail"/>
+                                        </div>
                                     </div>
 
-                                    <div className="enterInfoBlocksInputWrapper">
-                                        <input type="text" placeholder="Enter your email" id="signUpFormEmail"/>
+                                    <div className="enterInfoBlocks">
+                                        <div className="enterInfoBlocksTopic">
+                                            Name
+                                        </div>
+
+                                        <div className="enterInfoBlocksInputWrapper">
+                                            <input type="text" placeholder="Enter your name" id="signUpFormName"/>
+                                        </div>
                                     </div>
+
+
+                                    <div className="enterInfoBlocks">
+                                        <div className="enterInfoBlocksTopic">
+                                            Password
+                                        </div>
+
+                                        <div className="enterInfoBlocksInputWrapper">
+                                            <input type="text" placeholder="Enter your password" id="signUpFormPassword"/>
+                                        </div>
+                                    </div>
+
+                                    <div className="enterInfoBlocks">
+                                        <div className="enterInfoBlocksTopic">
+                                            Retype password
+                                        </div>
+
+                                        <div className="enterInfoBlocksInputWrapper">
+                                            <input type="text" placeholder="Enter your password"
+                                                   id="signUpFormRetypePassword"/>
+                                        </div>
+                                    </div>
+
+                                    <div className={'ModalFormBtnWrapper'}>
+                                        <Button text='Login'/>
+                                    </div>
+
+
                                 </div>
-
-                                <div className="enterInfoBlocks">
-                                    <div className="enterInfoBlocksTopic">
-                                        Name
-                                    </div>
-
-                                    <div className="enterInfoBlocksInputWrapper">
-                                        <input type="text" placeholder="Enter your name" id="signUpFormName"/>
-                                    </div>
-                                </div>
-
-
-                                <div className="enterInfoBlocks">
-                                    <div className="enterInfoBlocksTopic">
-                                        Password
-                                    </div>
-
-                                    <div className="enterInfoBlocksInputWrapper">
-                                        <input type="text" placeholder="Enter your password" id="signUpFormPassword"/>
-                                    </div>
-                                </div>
-
-                                <div className="enterInfoBlocks">
-                                    <div className="enterInfoBlocksTopic">
-                                        Retype password
-                                    </div>
-
-                                    <div className="enterInfoBlocksInputWrapper">
-                                        <input type="text" placeholder="Enter your password"
-                                               id="signUpFormRetypePassword"/>
-                                    </div>
-                                </div>
-
-                                <div className="loginFormLogin">
-                                    <div className="login" id="SignUpFormSubmit">
-                                        Sign up
-                                    </div>
-                                </div>
-
 
                             </div>
                         </div>
@@ -238,6 +248,8 @@ const Header = ({isAuthorized}) =>{
 
 
                 </div>
+
+
 
 
 

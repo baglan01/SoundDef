@@ -205,6 +205,8 @@ button {
     align-items: center;
     text-align: center;
     background: black;
+
+    width: 100%;
 }
 
 .login p{
@@ -369,42 +371,49 @@ Login SignUp Form
     width: 100%;
 }
 
-#signUpContent{
-
-    height: 450px;
-    width: 640px;
+.overlayContent{
+    width: 100%;
 }
 
-#loginContent{
-    height: 450px;
-    width: 640px;
-
+.ModalFormBtnWrapper{
+    width: 15%;
+    display: flex;
+    align-self: end;
 }
 
-
-#overlayContentSubHeaderBlock{
+.overlayContentSubHeaderBlock{
     position: absolute;
     height: 2px;
-    width: 70px;
+    width: 72px;
     background: #004962;
 
     transition: all 1s ease-in-out;
 }
 
+.overlayContentSubHeaderBlockMove{
+    margin-left: 85%;
+    width: 100px;
+}
+
+
 .loginContentInnerWrapper{
-    padding: 20px;
     width: 100%;
     height: 100%;
 
-
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    /*margin: 10px;*/
 }
 
 .enterInfoBlocks{
-    margin: 20px;
+    /*margin: 20px;*/
 }
 
 .enterInfoBlocksTopic{
     margin-bottom:10px;
+    text-align: start;
+    color: black;
 }
 
 .enterInfoBlocksInputWrapper{
@@ -451,11 +460,15 @@ Login SignUp Form
 .overlayMainContent{
     position: absolute;
     display: flex;
-    width: 1280px;
+    width: 1400px;
 
     transition: all 1s ease-in-out;
+    gap: 10px;
 }
 
+.loginPartMove{
+    margin-left: -100%;
+}
 
 
 

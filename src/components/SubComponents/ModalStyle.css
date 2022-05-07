@@ -24,7 +24,7 @@
 
 .MainModalContent{
     z-index: 3;
-    height:600px;
+    height:480px;
     width:700px;
 
     background:#eeeeee;
@@ -38,3 +38,4 @@
     font-size: 20px;
     padding: 30px;
 }
+
