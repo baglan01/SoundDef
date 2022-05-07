@@ -3,12 +3,14 @@ import Button from "../SubComponents/Button";
 import HeaderButtons from "./HeaderButtons";
 import MainModal from "../SubComponents/MainModal";
 import LoginSignUpContent from "../SubComponents/LoginSignUpContent";
+import ProfileModal from "../SubComponents/ProfileModal";
 
 
 
-const Header = ({isAuthorized}) =>{
+const Header = ({isAuthorized , setAuthorized}) =>{
 
     const [loginModalActive , setLoginModalActive ] = useState(false)
+    const [ProfileModalActive , setProfileModalActive ] = useState(false)
     const [LoginPartActive , setLoginPartActive] = useState(true);
 
     return(
@@ -69,17 +71,17 @@ const Header = ({isAuthorized}) =>{
                     {
                         isAuthorized ?
                             (
-                            <div className="profileAndLogOut">
-                                <Button text='Profile'/>
-                                <Button text='Log Out'/>
-                            </div>
+                                <div className="profileAndLogOut">
+                                    <Button text='Profile'onClick={ () => {setProfileModalActive(true)}}/>
+                                    <Button text='Log Out' onClick={ () => {setAuthorized(false)} }/>
+                                </div>
                             )
                             :
                             (
-                            <div className="loginAndSignUp">
-                                <Button onClick={ () => {setLoginModalActive(true) ; setLoginPartActive(true) }} text='login' />
-                                <Button onClick={ () => {setLoginModalActive((true)) ; setLoginPartActive(false) }}  text='Sign Up'/>
-                            </div>
+                                <div className="loginAndSignUp">
+                                    <Button onClick={ () => {setLoginModalActive(true) ; setLoginPartActive(true) }} text='login' />
+                                    <Button onClick={ () => {setLoginModalActive((true)) ; setLoginPartActive(false) }}  text='Sign Up'/>
+                                </div>
                             )
 
                     }
@@ -93,7 +95,6 @@ const Header = ({isAuthorized}) =>{
 
             <MainModal active={loginModalActive} setActive={setLoginModalActive}>
                 {/*<LoginSignUpContent LoginPartActive={LoginPartActive} setLoginPartActive={setLoginPartActive} />*/}
-
                 <div className={'overlayContentWrapper'}>
                     <div className="overlayContentHeader">
                         <button className="chooseBtn" id="toLoginPart" onClick={() => {setLoginPartActive(true) }}>
@@ -183,7 +184,7 @@ const Header = ({isAuthorized}) =>{
                                     </div>
 
                                     <div className={'ModalFormBtnWrapper'}>
-                                        <Button text='Login'/>
+                                        <Button text='Login' onClick={ () => {setAuthorized(true) ; setLoginModalActive(false) }} />
                                     </div>
 
                                 </div>
@@ -236,7 +237,7 @@ const Header = ({isAuthorized}) =>{
                                     </div>
 
                                     <div className={'ModalFormBtnWrapper'}>
-                                        <Button text='Login'/>
+                                        <Button text='Sign Up' onClick={ () => {setAuthorized(true); setLoginModalActive(false)} }/>
                                     </div>
 
 
@@ -248,12 +249,139 @@ const Header = ({isAuthorized}) =>{
 
 
                 </div>
-
-
-
-
-
             </MainModal>
+
+            <ProfileModal active={ProfileModalActive} setActive={setProfileModalActive}>
+
+
+                <div className="profileInnerWrapper">
+
+                    <button className="profileCloseBtn" onClick={() => {setProfileModalActive(false)}}>
+
+                        <svg width="24" height="24" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56 5.64L50.36 0L28 22.36L5.64 0L0 5.64L22.36 28L0 50.36L5.64 56L28 33.64L50.36 56L56 50.36L33.64 28L56 5.64Z"
+                                fill="black"/>
+                        </svg>
+
+
+                    </button>
+
+
+                    <div className="profileHeader">
+
+                        <div className="profileName">
+                            User Full Name
+                        </div>
+
+                        <div className="profileInfo">
+                            <div className="email">
+                                email@gmail.com
+                            </div>
+
+                            <div className="profileRegData">
+                                11.12.2022
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div className="profileContent">
+
+                        <div className="profileTryInfo">
+                            <div className="profileTryCount">
+                                You have : 4 attempts
+                            </div>
+
+                            <div className="profileHistoryTab">
+                                Your past attempts :
+                            </div>
+
+                        </div>
+
+                        <div className="profileHistory">
+
+                            <div className="tryCard">
+
+                                <div className="tryCardNumber">
+                                    1
+                                </div>
+
+                                <div className="tryCardName">
+                                    apsdjsaopjd
+                                </div>
+
+
+
+                                <div className="tryCardMoreBtn">
+                                    <Button text={'More Info'}/>
+                                </div>
+
+
+                            </div>
+
+                            <div className="tryCard">
+
+                                <div className="tryCardNumber">
+                                    2
+                                </div>
+
+                                <div className="tryCardName">
+                                    apsdjsaopjd
+                                </div>
+
+
+
+                                <div className="tryCardMoreBtn">
+                                    <Button text={'More Info'}/>
+                                </div>
+
+
+                            </div>
+
+                            <div className="tryCard">
+
+                                <div className="tryCardNumber">
+                                    3
+                                </div>
+
+                                <div className="tryCardName">
+                                    apsdjsaopjd
+                                </div>
+
+
+
+                                <div className="tryCardMoreBtn">
+                                    <Button text={'More Info'}/>
+                                </div>
+
+
+                            </div>
+
+                            <div className="tryCard">
+
+                                <div className="tryCardNumber">
+                                    4
+                                </div>
+
+                                <div className="tryCardName">
+                                    apsdjsaopjd
+                                </div>
+
+
+
+                                <div className="tryCardMoreBtn">
+                                    <Button text={'More Info'}/>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </ProfileModal>
 
         </div>
     )

@@ -679,6 +679,7 @@ svg.intro.go .text-stroke {
 
 .profileInnerWrapper{
     height: 100%;
+    width: 100%;
     position: relative;
 }
 
@@ -693,10 +694,12 @@ svg.intro.go .text-stroke {
     width: 100%;
     padding-bottom: 10px;
     border-bottom: 1px gray solid  ;
+    color: black;
 }
 
 
 .profileName{
+    display: flex;
     font-size: 30px;
 }
 
@@ -720,12 +723,13 @@ svg.intro.go .text-stroke {
     justify-content: space-between;
     font-size: 20px;
     margin-bottom: 15px;
+    color: black ;
 }
 
 .profileHistory{
     width: 100%;
     height: 94%;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     overflow-x: hidden;
 }
@@ -744,7 +748,7 @@ svg.intro.go .text-stroke {
     align-items: center;
     justify-content: space-between;
     padding: 4px 8px;
-    width: 100%;
+    /*width: 100%;*/
     background: black;
     border-radius: 4px;
     margin-bottom: 15px;

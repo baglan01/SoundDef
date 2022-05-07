@@ -5,7 +5,7 @@ import Main from "./Main";
 import About from "./About";
 import Features from "./Features";
 
-function Content(){
+function Content(isAuthorized , setAuthorized){
     return(
         <div className={`Content`}>
             <Main/>
@@ -13,8 +13,26 @@ function Content(){
             <About/>
             <Divider/>
             <Features/>
-            <Divider/>
-            <DownloadPart/>
+            <div>
+
+            {/*{*/}
+            {/*    console.log(isAuthorized)*/}
+            {/*}*/}
+            {
+                isAuthorized ?
+                    (
+                        <div>
+                            <Divider/>
+                            <DownloadPart/>
+                        </div>
+                    )
+                        :
+                    (
+                        <div/>
+                    )
+            }
+            </div>
+
 
         </div>
     )

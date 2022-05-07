@@ -10,8 +10,8 @@ function App() {
 
   return (
     <div className="AppWrapper">
-        <Header isAuthorized = {authorized} />
-        <Content/>
+        <Header isAuthorized = {authorized} setAuthorized={setAuthorized} />
+        <Content isAuthorized = {authorized} setAuthorized={setAuthorized}/>
     </div>
   );
 }
