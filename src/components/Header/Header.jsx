@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import Button from "../SubComponents/Button";
-import HeaderButtons from "./HeaderButtons";
 import MainModal from "../SubComponents/MainModal";
-import LoginSignUpContent from "../SubComponents/LoginSignUpContent";
 import ProfileModal from "../SubComponents/ProfileModal";
 
 
