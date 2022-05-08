@@ -4,36 +4,25 @@ import Header from "./components/Header/Header";
 import Content from "./components/Content/Content";
 import {useState} from "react";
 import axios from "axios";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function App() {
 
-    let data ;
+    const [authorized , setAuthorized] = useState(false)
 
-    axios({
-        method: 'POST',
-        url:'https://jsonplaceholder.typicode.com/todos/1',
-        data:{
-            userId: 1 ,
-            title: 'My title',
-            body:'My body',
-        },
-    })
-        .then((response) => {
-            console.log(response.data)
-            data = response.data;
-        })
-        .catch((error) => {
-            console.log(error)
-        });
-
-    const [authorized , setAuthorized] = useState(false);
-
-    console.log(data)
+    // console.log(data)
   return (
-    <div className="AppWrapper">
-        <Header isAuthorized = {authorized} setAuthorized={setAuthorized} />
-        <Content isAuthorized = {authorized} setAuthorized={setAuthorized}/>
-    </div>
+      <Route path={'/home'}>
+        <div className="AppWrapper">
+            <Header isAuthorized = {authorized} setAuthorized={setAuthorized} />
+            <Content isAuthorized = {authorized} setAuthorized={setAuthorized}/>
+        </div>
+      </Route>
   );
 
 

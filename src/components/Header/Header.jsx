@@ -5,11 +5,24 @@ import ProfileModal from "../SubComponents/ProfileModal";
 
 
 
+
 const Header = ({isAuthorized , setAuthorized}) =>{
+
+
+    const [value, setValue] = useState('')
+
+
+    const handleClear = (e) =>  {
+        e.preventDefault()
+        setValue('')
+    }
+    const handleChange = (e) => setValue(e.target.value)
 
     const [loginModalActive , setLoginModalActive ] = useState(false)
     const [ProfileModalActive , setProfileModalActive ] = useState(false)
     const [LoginPartActive , setLoginPartActive] = useState(true);
+
+    // const [cleanInput , setCleanInput] = useState(false);
 
     return(
         <div className={`Header`}>
@@ -198,7 +211,7 @@ const Header = ({isAuthorized , setAuthorized}) =>{
                                         </div>
 
                                         <div className="enterInfoBlocksInputWrapper">
-                                            <input type="text" placeholder="Enter your email" id="signUpFormEmail"/>
+                                            <input type="text" placeholder="Enter your email" id="signUpFormEmail" />
                                         </div>
                                     </div>
 
