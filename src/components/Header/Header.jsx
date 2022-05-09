@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigate} from "react-router-dom";
 import Button from "../SubComponents/Button";
 import MainModal from "../SubComponents/MainModal";
 import ProfileModal from "../SubComponents/ProfileModal";
@@ -7,7 +8,7 @@ import ProfileModal from "../SubComponents/ProfileModal";
 
 
 const Header = ({isAuthorized , setAuthorized}) =>{
-
+    const navigate = useNavigate();
 
     const [value, setValue] = useState('')
 
@@ -21,8 +22,6 @@ const Header = ({isAuthorized , setAuthorized}) =>{
     const [loginModalActive , setLoginModalActive ] = useState(false)
     const [ProfileModalActive , setProfileModalActive ] = useState(false)
     const [LoginPartActive , setLoginPartActive] = useState(true);
-
-    // const [cleanInput , setCleanInput] = useState(false);
 
     return(
         <div className={`Header`}>
@@ -72,29 +71,28 @@ const Header = ({isAuthorized , setAuthorized}) =>{
                         <a className="headerLink">Links</a>
                         <a className="headerLink">Links</a>
                     </div>
-
-
                 </div>
-
-
                 <div className="rightPartHeader">
-
                     {
-                        isAuthorized ?
-                            (
+                        isAuthorized ? (
                                 <div className="profileAndLogOut">
-                                    <Button text='Profile'onClick={ () => {setProfileModalActive(true)}}/>
-                                    <Button text='Log Out' onClick={ () => {setAuthorized(false)} }/>
+                                    <Button text='Profile' onClick={() => {setProfileModalActive(true)}}/>
+                                    <Button text='Log Out' onClick={() => {
+                                        setAuthorized(false)
+                                        navigate('/')
+                                    } }/>
                                 </div>
-                            )
-                            :
+                            ) :
                             (
                                 <div className="loginAndSignUp">
-                                    <Button onClick={ () => {setLoginModalActive(true) ; setLoginPartActive(true) }} text='login' />
-                                    <Button onClick={ () => {setLoginModalActive((true)) ; setLoginPartActive(false) }}  text='Sign Up'/>
+                                    <Button onClick={ () => {
+                                        navigate('/login')
+                                    }} text='login' />
+                                    <Button onClick={ () => {
+                                        navigate('/login')
+                                    }}  text='Sign Up'/>
                                 </div>
                             )
-
                     }
 
 

@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 
 
-function Authorization() {
+const Authorization = () =>  {
 
     const [toLogin , setToLogin] = useState(true);
 

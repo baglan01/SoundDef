@@ -6,10 +6,10 @@ import {useState} from "react";
 import axios from "axios";
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
-    Link
+    Routes
 } from "react-router-dom";
+import Authorization from "./components/Authorization";
 
 function App() {
 
@@ -17,12 +17,15 @@ function App() {
 
     // console.log(data)
   return (
-      <Route path={'/home'}>
-        <div className="AppWrapper">
-            <Header isAuthorized = {authorized} setAuthorized={setAuthorized} />
-            <Content isAuthorized = {authorized} setAuthorized={setAuthorized}/>
-        </div>
-      </Route>
+        <Router>
+            <div>
+                <Header isAuthorized = {authorized} setAuthorized={setAuthorized} />
+                <Routes>
+                    <Route path="/" element={<Content isAuthorized={authorized} setAuthorized={setAuthorized}/>} />
+                    <Route path="/login" element={<Authorization />} />
+                </Routes>
+            </div>
+        </Router>
   );
 
 
