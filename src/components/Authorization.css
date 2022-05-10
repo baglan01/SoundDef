@@ -9,7 +9,7 @@
 html {
     font-family: 'Nunito', sans-serif;
     font-size: 22px;
-    color: #fff;
+    /*color: #fff;*/
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 93vh;
     /*padding: 1rem 0.5rem;*/
 }
 
@@ -51,7 +51,6 @@ a, a:visited {
 
 input[type="text"],
 input[type="password"],
-button,
 textarea {
     font-family: 'Nunito', sans-serif;
     font-size: 22px;
@@ -59,14 +58,11 @@ textarea {
     border-radius: 0.5rem;
 }
 
-label,
-button {
+label{
     margin-top: 1rem;
 }
 
-button {
-    padding: 0.5rem;
-}
+
 
 .instructions {
     font-size: 0.75rem;
@@ -143,6 +139,7 @@ button {
     border-top-color: rgba(255,255,255,0.5);
     border-bottom-color: rgba(255,255,255,0.5);
     transform: scale(0.1, 1);
+    margin-top: 0!important;
 }
 
 .login:hover p {
