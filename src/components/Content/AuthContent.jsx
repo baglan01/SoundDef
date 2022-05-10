@@ -5,7 +5,7 @@ import DownloadPart from "./DownloadPart";
 
 const AuthContent = () =>{
     return(
-        <div>
+        <div className={`Content`}>
             <Main/>
             <Divider/>
             <DownloadPart/>
