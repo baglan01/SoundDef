@@ -1,23 +1,22 @@
 import React from "react";
 import {useRef, useState , useEffect , useContext} from "react";
 import AuthContext from "../context/AuthProvider";
-// import axios from '../api/axios'
-
 import axios from '../../api/api';
 
+// import axios from '../api/axios'
 // const LOGIN_URL = '/api/auth/login';
 
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link, useNavigate
 } from "react-router-dom";
 
+const Login = ({toLogin , setToLogin , authorized , setAuthorized}) =>{
 
+    const navigate = useNavigate();
 
-
-const Login = ({toLogin , setToLogin}) =>{
 
     const { setAuth } = useContext(AuthContext);
     const userRef = useRef();
@@ -72,7 +71,11 @@ const Login = ({toLogin , setToLogin}) =>{
             setUser('');
             setPwd('');
             setSuccess(true);
-            <Link to={'/home'}/>
+            // <Link to={'/'}/>
+
+            setAuthorized(true)
+            navigate('/userMain')
+
         } catch (err) {
             if (!err?.response || err.response?.status === 404 ) {
                 setErrMsg('No Server Response');

@@ -7,7 +7,7 @@ import ProfileModal from "../SubComponents/ProfileModal";
 
 
 
-const Header = ({isAuthorized , setAuthorized}) =>{
+const Header = ({isAuthorized , setAuthorized , toLogin , setToLogin }) =>{
     const navigate = useNavigate();
 
     const [value, setValue] = useState('')
@@ -67,9 +67,8 @@ const Header = ({isAuthorized , setAuthorized}) =>{
                     </div>
 
                     <div className="headerLinks">
-                        <a className="headerLink">About</a>
-                        <a className="headerLink">Links</a>
-                        <a className="headerLink">Links</a>
+                        <a className="headerLink" onClick={() =>navigate('/')}>About</a>
+                        <a className="headerLink" onClick={() =>{ isAuthorized ? navigate('/userMain') : navigate('/login') }}>Profile</a>
                     </div>
                 </div>
                 <div className="rightPartHeader">
@@ -86,9 +85,11 @@ const Header = ({isAuthorized , setAuthorized}) =>{
                             (
                                 <div className="loginAndSignUp">
                                     <Button onClick={ () => {
+                                        setToLogin(true);
                                         navigate('/login')
                                     }} text='login' />
                                     <Button onClick={ () => {
+                                        setToLogin(false)
                                         navigate('/login')
                                     }}  text='Sign Up'/>
                                 </div>

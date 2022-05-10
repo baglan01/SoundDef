@@ -2,15 +2,18 @@ import React from "react";
 import {useRef, useState , useEffect} from "react";
 import {faCheck , faTimes , faInfoCircle} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-// import axios from '../api/axios';
 import axios from '../../api/api'
+
+
 // import { useHistory } from 'react-router-dom'
+// import axios from '../api/axios';
+
 
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link, useNavigate
 } from "react-router-dom";
 
 
@@ -21,9 +24,11 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@_#$%]).{8,24}$/;
 
 const REGISTER_URL = '/api/auth/signup';
 
-const SignUp = ({toLogin , setToLogin}) =>{
+const SignUp = ({toLogin , setToLogin , authorized , setAuthorized}) =>{
 
     // const history = useHistory();
+    const navigate = useNavigate();
+
 
     const userRef = useRef();
     const errRef = useRef();
@@ -116,8 +121,6 @@ const SignUp = ({toLogin , setToLogin}) =>{
             return;
         }
 
-
-
         try {
             const response = await axios.post(
                 'http://jsonplaceholder.typicode.com/posts',
@@ -141,7 +144,13 @@ const SignUp = ({toLogin , setToLogin}) =>{
             setPwd('');
             setMatchPwd('');
 
-            <Link to={'/home'}/>
+
+
+            setAuthorized(true)
+            navigate('/userMain')
+
+
+            // <Link to={'/home'}/>
 
             // history.push('/')
 

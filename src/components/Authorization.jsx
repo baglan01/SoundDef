@@ -11,18 +11,17 @@ import {
 } from "react-router-dom";
 
 
-const Authorization = () =>  {
+const Authorization = ({toLogin ,setToLogin , authorized , setAuthorized}) =>  {
 
-    const [toLogin , setToLogin] = useState(true);
 
 
     return (
         <div className="Authorization">
             {toLogin ? (
-                <Login toLogin={toLogin} setToLogin={setToLogin}/>
+                <Login toLogin={toLogin} setToLogin={setToLogin} authorized={authorized} setAuthorized={setAuthorized}/>
 
             ) : (
-                <SignUp toLogin={toLogin} setToLogin={setToLogin}/>
+                <SignUp toLogin={toLogin} setToLogin={setToLogin} authorized={authorized} setAuthorized={setAuthorized}/>
             )
             }
         </div>

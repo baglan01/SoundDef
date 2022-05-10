@@ -16,27 +16,6 @@ function Content(isAuthorized , setAuthorized){
             <Features/>
             <Divider/>
             <Alternatives/>
-            <div>
-
-            {/*{*/}
-            {/*    console.log(isAuthorized)*/}
-            {/*}*/}
-            {
-                isAuthorized ?
-                    (
-                        <div>
-                            <Divider/>
-                            <DownloadPart/>
-                        </div>
-                    )
-                        :
-                    (
-                        <div/>
-                    )
-            }
-            </div>
-
-
         </div>
     )
 }
