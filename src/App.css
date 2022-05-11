@@ -1036,3 +1036,44 @@ svg.intro.go .text-stroke {
     height: 100px;
 }
 
+
+.Upload{
+    background: #eeeeee;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 20px 0;
+}
+
+.uploadInnerWrapper{
+    width: 80%;
+}
+
+.fileLoadingBody{
+    margin-bottom: 20px;
+}
+
+.uploadContainer{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 2px black dashed;
+    outline-offset: -10px;
+    border: 1px black solid;
+    /*background: white;*/
+    background: #ddd;
+    transition: 0.5s ease;
+}
+
+.uploadContainer:hover{
+    background: #ddd;
+    transition: 0.5s ease;
+}
+
+.uploadDragStart{
+    background: white;
+    transition: 0.5s ease;
+}
