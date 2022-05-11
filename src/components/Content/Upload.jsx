@@ -2,30 +2,38 @@ import React, {useState} from "react";
 import Button from "../SubComponents/Button";
 import axios from "axios";
 
+
+import loadedFile from '../../images/Audio FileAllAudio.svg'
+
+
 const Upload = () =>{
 
-    const [drag , setDrag] = useState(false);
+    const formData = new FormData()
+    const [drag , setDrag] = useState('dragEnd');
 
     function DragStartHandler(e){
         e.preventDefault()
-        setDrag(true)
+        setDrag('dragStart')
     }
 
     function DragLeaveHandler(e){
         e.preventDefault()
-        setDrag(false)
+        setDrag('dragEnd')
     }
 
     function onDropHandler(e){
         e.preventDefault();
         let files = [...e.dataTransfer.files]
         console.log(files)
-        const formData = new FormData()
         formData.append('file' , files[0])
         formData.append('useerID' , 1)
+        setDrag('dragLoaded')
+    }
+
+    function sendFiles(e){
+        e.preventDefault();
         axios.post('http://jsonplaceholder.typicode.com/posts' , formData)
         console.log(formData)
-        setDrag(false)
     }
 
     return(
@@ -40,29 +48,44 @@ const Upload = () =>{
 
                 <div className="fileLoadingBody">
                     {
-                        drag ?
+                        drag === 'dragStart' ?
                             <div className="uploadContainer"
                                  onDragStart={ e => DragStartHandler(e)}
                                  onDragLeave={e => DragLeaveHandler(e)}
                                  onDragOver={e => DragStartHandler(e)}
                                  onDrop={ e  => onDropHandler(e)}
                             >
-                                Drag file
-                            </div>
-                            :
-                            <div className="uploadContainer uploadDragStart"
-                                 onDragStart={ e => DragStartHandler(e)}
-                                 onDragLeave={e => DragLeaveHandler(e)}
-                                 onDragOver={e => DragStartHandler(e)}
-                            >
                                 Drop file here
                             </div>
+                            :    drag === 'dragEnd'?
+                                <div className="uploadContainer uploadDragStart"
+                                     onDragStart={ e => DragStartHandler(e)}
+                                     onDragLeave={e => DragLeaveHandler(e)}
+                                     onDragOver={e => DragStartHandler(e)}
+                                >
+                                    Drag file
+                                </div>
+                                :
+                                <div className="uploadContainer uploadDragStart"
+                                     onDragStart={ e => DragStartHandler(e)}
+                                     onDragLeave={e => DragLeaveHandler(e)}
+                                     onDragOver={e => DragStartHandler(e)}
+                                >
+                                    <div className="fileLoaded">
+                                        <img src={loadedFile}/>
+                                        <div className="fileLoadedText">
+                                            Files taken
+
+                                        </div>
+                                    </div>
+                                </div>
+
                     }
 
                 </div>
 
                 <div className="fileLoadSubmitBtn">
-                    <Button text='Submit'/>
+                    <Button text='Submit' onClick={e => sendFiles(e)}/>
                 </div>
 
             </div>
